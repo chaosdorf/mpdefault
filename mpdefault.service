@@ -1,0 +1,12 @@
+[Unit]
+Description=Play default on MPD
+After=mpd.service
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/mpdefault.py
+User=mpd
+Restart=always
+
+[Install]
+WantedBy=default.target
