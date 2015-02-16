@@ -1,14 +1,16 @@
 #!/usr/bin/env python2
 
-uri = "http://voxsc1.somafm.com:8200"
-
 import time
 from mpd import MPDClient
+
+host = "localhost"
+port = 6600
+uri = "http://voxsc1.somafm.com:8200"
 
 
 def serve():
     client = MPDClient()
-    client.connect("localhost", 6600)
+    client.connect(host, port)
 
     while True:
         time.sleep(5)
@@ -20,11 +22,12 @@ def serve():
             client.repeat(0)
             client.single(0)
             client.play()
-            time.sleep(1)
-            
+            time.sleep(0.5)
+            client.setvol(9)
+
             for i in range(10, 43):
-                client.setvol(i)
                 time.sleep(0.5)
+                client.setvol(i)
 
 while True:
     try:
