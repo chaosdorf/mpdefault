@@ -5,7 +5,7 @@ from mpd import MPDClient
 
 host = "localhost"
 port = 6600
-uri = "http://voxsc1.somafm.com:8200"
+uri = "http://ice1.somafm.com/spacestation-128.mp3"
 
 
 def serve():
